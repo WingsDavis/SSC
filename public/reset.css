@@ -1,0 +1,7 @@
+/* Minimal reset */
+* { margin: 0; padding: 0; }
+img { display: block; max-width: 100%; height: auto; }
+button { font: inherit; }
+ul, ol { list-style: none; }
+ul.disc, ol.decimal { list-style: initial; margin-left: 1rem; }
+
