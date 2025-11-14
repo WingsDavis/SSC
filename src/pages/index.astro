@@ -3,7 +3,9 @@ import Layout from '../layouts/Layout.astro';
 
 const phone = '+233549180725';
 const phoneDisplay = '+233 549 180 725';
-const email = 'fagyemang811@gmail.com';
+const phoneCall = '+8613259918728';
+const phoneCallDisplay = '+86 132 5991 8728';
+const email = 'connect.scholarscript@gmail.com';
 ---
 <Layout title="Scholar Script Consult – Academic, Data, Editing & Professional Services" description="Unlocking the potential of your academic and professional journey with expert consultation services tailored to your needs.">
 	<section class="hero">
@@ -15,11 +17,12 @@ const email = 'fagyemang811@gmail.com';
 				<div class="cta">
 					<a class="btn primary" href={`https://wa.me/${phone}?text=Hello%20Scholar%20Script%20Consult%2C%20I%27d%20like%20to%20inquire%20about%20your%20services.`} target="_blank" rel="noopener">Chat on WhatsApp</a>
 					<a class="btn secondary" href={`mailto:${email}?subject=Inquiry%20-%20Scholar%20Script%20Consult`}>Email Us</a>
-					<a class="btn secondary" href={`tel:${phone}`}>Call {phoneDisplay}</a>
+					<a class="btn secondary" href={`tel:${phoneCall}`}>Call {phoneCallDisplay}</a>
 				</div>
 			</div>
-			<div>
-				<img src="/hero-people.jpg" alt="Consultants collaborating on a laptop" style="border-radius:16px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 16px 40px rgba(0,0,0,0.35);" onerror="this.style.display='none'">
+			<div style="display:flex;flex-direction:column;align-items:center;">
+				<img src="/wechat-qr.jpg" alt="WeChat QR Code - Scan to add us on WeChat" style="border-radius:16px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 16px 40px rgba(0,0,0,0.35);max-width:260px;width:100%;height:auto;" onerror="this.style.display='none'">
+				<div style="text-align:center;margin-top:12px;font-size:16px;font-weight:600;color:#ffffff;">Wechat</div>
 			</div>
 		</div>
 	</section>
@@ -171,16 +174,24 @@ const email = 'fagyemang811@gmail.com';
 				<h2>We respond quickly to every inquiry</h2>
 				<p class="muted">Reach out via WhatsApp, phone, or email for timelines, rates, and tailored support.</p>
 			</div>
-			<div class="contact">
+			<div class="contact" style="grid-template-columns: 300px 1fr;">
+				<style>
+					@media (max-width: 640px) {
+						.contact {
+							grid-template-columns: 1fr !important;
+						}
+					}
+				</style>
 				<div class="panel compact">
 					<div class="inline" style="justify-content:space-between;width:100%;">
 						<div>
 							<div class="muted" style="font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.6px;">Phone / WhatsApp</div>
 							<div style="font-size:20px;font-weight:800;margin-top:4px;">{phoneDisplay}</div>
+							<div style="font-size:20px;font-weight:800;margin-top:8px;">{phoneCallDisplay}</div>
 						</div>
 						<div class="cta">
 							<a class="btn primary" href={`https://wa.me/${phone}`} target="_blank" rel="noopener">WhatsApp</a>
-							<a class="btn secondary" href={`tel:${phone}`}>Call</a>
+							<a class="btn secondary" href={`tel:${phoneCall}`}>Call</a>
 						</div>
 					</div>
 				</div>
@@ -195,10 +206,10 @@ const email = 'fagyemang811@gmail.com';
 						</div>
 					</div>
 				</div>
-				<div class="panel message-panel">
+				<div class="panel message-panel" style="grid-column: 1 / -1;">
 					<form class="message-form" data-message-form>
 						<label for="quick-message" class="form-label">Quick message</label>
-						<textarea id="quick-message" name="message" placeholder="Hello, I’d like to learn more about..." rows={4} required></textarea>
+						<textarea id="quick-message" name="message" placeholder="Hello, I'd like to learn more about..." rows={4} required></textarea>
 						<button class="btn primary" type="submit">Send Message</button>
 					</form>
 				</div>

@@ -138,6 +138,45 @@ nav a:hover { background: rgba(255,255,255,0.08); }
 	color: #ffffff;
 }
 
+.qr-flip-card {
+	background-color: transparent;
+	width: 260px;
+	height: 260px;
+	perspective: 1000px;
+	cursor: pointer;
+}
+.qr-flip-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+}
+.qr-flip-card.flipped .qr-flip-inner {
+	transform: rotateY(180deg);
+}
+.qr-flip-front, .qr-flip-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	border-radius: 16px;
+	border: 1px solid rgba(255,255,255,0.1);
+	box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+	overflow: hidden;
+}
+.qr-flip-front {
+	background: linear-gradient(160deg, #0f267f, #14339f);
+	position: relative;
+}
+.qr-flip-back {
+	background: rgba(255,255,255,0.05);
+	transform: rotateY(180deg);
+	position: relative;
+}
+
 section { scroll-margin-top: 110px; }
 
 .services-section {
@@ -301,6 +340,18 @@ footer {
 	border-top: 1px solid rgba(255,255,255,0.08);
 	padding: 24px 0 48px;
 	color: var(--muted);
+}
+.built-by-link {
+	color: #4ade80;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+.built-by-link:hover {
+	color: #22c55e;
+}
+.chiller-font {
+	font-family: 'Chiller', 'Impact', 'Arial Black', sans-serif;
+	font-weight: normal;
 }
 
 @media (max-width: 920px) {
